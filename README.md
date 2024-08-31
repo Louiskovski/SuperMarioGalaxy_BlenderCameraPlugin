@@ -1,4 +1,4 @@
-# SuperMarioGalaxy_BlenderCameraPlugin
+# Super Mario Galaxy - Blender Camera Plugin
 Blender plugin with useful functions for *Super Mario Galaxy 2* cameras like copying a camera as code to paste into [LaunchCamPlus](https://github.com/SuperHackio/LaunchCamPlus) (currently only version 2.3.9.4).
 
 Currently only for the commonly used *XY PARA* type.
@@ -8,12 +8,13 @@ Planned for new versions are among others the types *POINT FIX* and *TOWER* as w
 
 
 
-#How to use it
-After installing the plugin, you can find it in the 3D view on the right under the *Misc* tab
+# How to use it
+
+After installing the plugin, you can find it in the 3D view on the right under the *Misc* tab.
 
 Click on *Add Camera* to create the objects needed to create a camera:
 
-- The Cone corresponds to the position of Mario or the focused object
+- The cone corresponds to the position of Mario or the focused object
 - The sphere is responsible for the rotation and the offsets
 - The camera itself is only responsible for the zoom and the FoV (Field of View)
 
