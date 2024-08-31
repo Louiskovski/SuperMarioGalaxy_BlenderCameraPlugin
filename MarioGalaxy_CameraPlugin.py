@@ -1,11 +1,11 @@
 bl_info = {
     "name": "Mario Galaxy Camera Plugin",
     "author": "Louis Miles",
-    "version": (0, 9, 0),
+    "version": (0, 9, 1),
     "blender": (3, 3, 2),
     "location": "In 3D Viewport right under Misc",
     "description": "Copies camera codes to paste into LaunchCamPlus and more options",
-    "warning": "Only compatible with LaunchCamPlus version 2.5.0.0",
+    "warning": "Only compatible with LaunchCamPlus version 2.5.0.0 or higher",
     "doc_url": "",
 }
 
@@ -76,6 +76,12 @@ def CamCreate(context):
     bpy.context.view_layer.objects.active.data.lens_unit = 'FOV'
     bpy.context.view_layer.objects.active.lock_location[1] = True
     bpy.context.view_layer.objects.active.lock_location[2] = True
+    bpy.context.object.lock_rotation[0] = True
+    bpy.context.object.lock_rotation[1] = True
+    bpy.context.object.lock_rotation[2] = True
+    bpy.context.object.lock_scale[0] = True
+    bpy.context.object.lock_scale[1] = True
+    bpy.context.object.lock_scale[2] = True
 
     #parenting:
     bpy.ops.object.select_all(action='DESELECT')
