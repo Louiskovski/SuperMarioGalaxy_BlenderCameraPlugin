@@ -14,7 +14,7 @@ After installing the plugin, you can find it in the 3D view on the right under t
 
 Click on *Add Camera* to create the objects needed to create a camera:
 
-- The cone corresponds to the position of Mario or the focused object
+- The cone corresponds to the position of Mario or the focused object. Its object name will be used for the Camera ID
 - The sphere is responsible for the rotation and the offsets
 - The camera itself is only responsible for the zoom and the FoV (Field of View)
 
