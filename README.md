@@ -1,0 +1,1 @@
+# SuperMarioGalaxy_BlenderCameraPlugin
