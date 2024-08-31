@@ -5,7 +5,7 @@ bl_info = {
     "blender": (3, 3, 2),
     "location": "In 3D Viewport right under Misc",
     "description": "Copies camera codes to paste into LaunchCamPlus and more options",
-    "warning": "Currently only compatible with LaunchCamPlus version 2.3.9.4",
+    "warning": "Only compatible with LaunchCamPlus version 2.5.0.0",
     "doc_url": "",
 }
 
@@ -33,7 +33,7 @@ def CamXYexport(context):
     KamFOV = math.degrees(KamFOV)
 
     LCPcode = "LCP|14F51CD8%196631%Int32|ABC4A1CF%" + str(KamAxisX) + "%Single|ABC4A1CE%" + str(KamAxisY) + "%Single|0035807D%" + str(KamAxisRoll) + "%Single|002F0DA6%" + str(KamZoom) + "%Single|00300D4C%" + str(KamFOV) + "%Single|B6004E72%120%Int32|BEC02B34%" + str(KamOffX) + "%Single|BEC02B35%" + str(KamOffY) + "%Single|BEC02B36%" + str(KamOffZ) + "%Single|9F02074F%1%Int32|00000D1B%" + str(KamName) + "%String|20C58F89%CAM_TYPE_XZ_PARA%String"
-    LCPcode = LCPcode.replace(".", ",")
+    #LCPcode = LCPcode.replace(".", ",") #Only for LCP versions under 2.5.0.0. If this line is activated, it works with 2.3.9.4 and older
 
     clipboard = bpy.context.window_manager.clipboard = LCPcode
 
