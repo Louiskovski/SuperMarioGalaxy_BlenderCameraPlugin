@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Mario Galaxy Camera Plugin",
     "author": "Louis Miles",
-    "version": (0, 9, 1),
+    "version": (0, 9, 2),
     "blender": (3, 3, 2),
     "location": "In 3D Viewport right under Misc",
     "description": "Copies camera codes to paste into LaunchCamPlus and more options",
@@ -40,6 +40,37 @@ def CamXYexport(context):
     clipboard.encode("utf8")
     
     
+def CamPointFixexport(context):
+    C = bpy.context
+
+    KamName = bpy.context.object.name # Name bzw ID notieren
+    KamPosX = bpy.context.view_layer.objects.active.location[0]
+    KamPosY = bpy.context.view_layer.objects.active.location[2]
+    KamPosZ = bpy.context.view_layer.objects.active.location[1] * -1
+    bpy.ops.object.select_hierarchy(direction='CHILD', extend=False)
+    KamAxisY = bpy.context.view_layer.objects.active.rotation_euler[1] - 1.570796 # -90, only Point Fix Cam type
+    KamAxisX = bpy.context.view_layer.objects.active.rotation_euler[2] * -1
+    KamAxisRoll = bpy.context.view_layer.objects.active.rotation_euler[0]
+    KamOffX = bpy.context.view_layer.objects.active.location[0]
+    KamOffY = bpy.context.view_layer.objects.active.location[1]
+    KamOffZ = bpy.context.view_layer.objects.active.location[2]
+    bpy.ops.object.select_hierarchy(direction='CHILD', extend=False)
+    #KamZoom = bpy.data.objects["Camera"].location[0]
+    KamZoom = bpy.context.view_layer.objects.active.location[0] * -1
+    #KamFOV = bpy.data.objects["Camera"].data.angle
+    KamFOV = bpy.context.view_layer.objects.active.data.angle
+    KamFOV = math.degrees(KamFOV)
+    #KamFOV = 45 #test
+
+
+
+    LCPcode = "LCP|14F51CD8%196631%Int32|002F0DA6%" + str(KamZoom) + "%Single|BB74D6C1%1%Int32|BEC02B35%" + str(KamOffY) + "%Single|BEC02B34%" + str(KamOffX) + "%Single|0035807D%" + str(KamAxisRoll) + "%Single|BEC02B36%" + str(KamOffZ) + "%Single|AE79D1C0%120%Int32|20C58F89%CAM_TYPE_POINT_FIX%String|00000D1B%" + str(KamName) + "%String|31CB1323%" + str(KamPosX) + "%Single|31CB1324%" + str(KamPosY) + "%Single|31CB1325%" + str(KamPosZ) + "%Single|AC52894B%" + str(KamAxisX) + "%Single|AC52894C%" + str(KamAxisY) + "%Single|EB66C5C3%0%Int32"
+    #LCPcode = LCPcode.replace(".", ",") #Only for LCP versions under 2.5.0.0. If this line is activated, it works with 2.3.9.4 and older
+
+    clipboard = bpy.context.window_manager.clipboard = LCPcode
+
+    clipboard.encode("utf8")
+
 
 def CamCreate(context):
     C = bpy.context
@@ -127,7 +158,16 @@ class GalaxycamOperator2(bpy.types.Operator):
     def execute(self, context):
         CamCreate(context) #Was vor der Klammer steht ist was er jetzt executen soll
         return {'FINISHED'}
-    
+
+
+class GalaxycamOperator3(bpy.types.Operator):
+    """Copy Cameracode to paste into LaunchCamPlus
+You must select the cone with the camera code as the name and nothing else!"""
+    bl_idname = "objecti.galaxycam_operator3"
+    bl_label = "POINT FIX"
+    def execute(self, context):
+        CamPointFixexport(context) #Was vor der Klammer steht ist was er jetzt executen soll
+        return {'FINISHED'}
 
 
 class LayoutSMGCameraPanel(bpy.types.Panel):
@@ -146,6 +186,9 @@ class LayoutSMGCameraPanel(bpy.types.Panel):
         row = layout.row()
         row.scale_y = 1.2
         row.operator("object.galaxycam_operator1", icon='CAMERA_DATA')
+        row = layout.row()
+        row.scale_y = 1.2
+        row.operator("objecti.galaxycam_operator3", icon='CAMERA_DATA')
 
         layout.label(text="Camera Actions")
         row = layout.row()
@@ -156,11 +199,13 @@ class LayoutSMGCameraPanel(bpy.types.Panel):
 def register():
     bpy.utils.register_class(GalaxycamOperator1)
     bpy.utils.register_class(GalaxycamOperator2)
+    bpy.utils.register_class(GalaxycamOperator3)
     bpy.utils.register_class(LayoutSMGCameraPanel)
     
 def unregister():
     bpy.utils.unregister_class(GalaxycamOperator1)
     bpy.utils.unregister_class(GalaxycamOperator2)
+    bpy.utils.unregister_class(GalaxycamOperator3)
     bpy.utils.unregister_class(LayoutSMGCameraPanel)
     
 
