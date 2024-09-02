@@ -1,5 +1,5 @@
 # Super Mario Galaxy - Blender Camera Plugin
-Blender plugin with useful functions for *Super Mario Galaxy 2* cameras like copying a camera as code to paste into [LaunchCamPlus](https://github.com/SuperHackio/LaunchCamPlus) (version 2.5.0.0).
+Blender plugin with useful functions for *Super Mario Galaxy 2* cameras like copying a camera as code to paste into [LaunchCamPlus](https://github.com/SuperHackio/LaunchCamPlus) (version 2.5.0.0+).
 
 Currently only for the *XY PARA* and *POINT FIX* type.
 
