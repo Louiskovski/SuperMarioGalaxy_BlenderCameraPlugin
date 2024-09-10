@@ -12,15 +12,16 @@ Planned for new versions are among others the type *TOWER* and *2D SLIDE* as wel
 
 After installing the plugin, you can find it in the 3D view on the right under the *Misc* tab.
 
-Click on *Add Camera* to create the objects needed to create a camera:
+Click on *Add Camera* to create the objects needed to create a galaxy camera:
 
 - The cone corresponds to the position of Mario or the focused object (XY PARA) or the fixed position to look at in the level (POINT FIX). Its object name will be used for the Camera ID
 - The sphere is responsible for the rotation and the offsets
 - The camera itself is only responsible for the zoom and the FoV (Field of View)
 
+![screenshot](screenshot.png)
 
 Simply adjust the rotation and position of the sphere and camera object as required. Simply view the camera actively in the 3D view to get exactly the viewing angle that will be used in the game.
-
+Please do not unlock and edit the locked parameters.
 
 Tip: Use one 3D view for positioning and another with the camera active. You can then also move the cone in the active camera to see how Mario would move with this camera.
 
