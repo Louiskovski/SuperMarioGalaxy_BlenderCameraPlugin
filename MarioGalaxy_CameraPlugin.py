@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Mario Galaxy Camera Plugin",
     "author": "Louis Miles",
-    "version": (0, 9, 2),
+    "version": (0, 9, 3),
     "blender": (3, 3, 2),
     "location": "In 3D Viewport right under Misc",
     "description": "Copies camera codes to paste into LaunchCamPlus and more options",
@@ -23,7 +23,7 @@ def CamXYexport(context):
     bpy.ops.object.select_hierarchy(direction='CHILD', extend=False)
     KamAxisY = bpy.context.view_layer.objects.active.rotation_euler[1]
     KamAxisX = bpy.context.view_layer.objects.active.rotation_euler[2] * -1
-    KamAxisRoll = bpy.context.view_layer.objects.active.rotation_euler[0]
+    KamAxisRoll = bpy.context.view_layer.objects.active.rotation_euler[0] * -1
     KamOffX = bpy.context.view_layer.objects.active.location[0]
     KamOffY = bpy.context.view_layer.objects.active.location[1]
     KamOffZ = bpy.context.view_layer.objects.active.location[2]
@@ -50,7 +50,7 @@ def CamPointFixexport(context):
     bpy.ops.object.select_hierarchy(direction='CHILD', extend=False)
     KamAxisY = bpy.context.view_layer.objects.active.rotation_euler[1] - 1.570796 # -90, only Point Fix Cam type
     KamAxisX = bpy.context.view_layer.objects.active.rotation_euler[2] * -1
-    KamAxisRoll = bpy.context.view_layer.objects.active.rotation_euler[0]
+    KamAxisRoll = bpy.context.view_layer.objects.active.rotation_euler[0] * -1
     KamOffX = bpy.context.view_layer.objects.active.location[0]
     KamOffY = bpy.context.view_layer.objects.active.location[1]
     KamOffZ = bpy.context.view_layer.objects.active.location[2]
