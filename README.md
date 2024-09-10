@@ -26,8 +26,6 @@ Please do not unlock and edit the locked parameters.
 Tip: Use one 3D view for positioning and another with the camera active. You can then also move the cone in the active camera to see how Mario would move with this camera.
 
 
-Give the cone object the camera ID or name to be used (example: c:0000).
+## Export
 
-
-
-When you are happy with the camera, select the cone object and click on “XY PARA” or "POINT VIEW" under "Copy Camera Code" in the plugin. In LaunchCamPlus you can now insert the camera by pressing *CTRL + V*. 
+When you are happy with the camera, give the cone object the camera ID or name to be used (example: c:0000), then select the **cone object** and no other object and click on “XY PARA” or "POINT VIEW" under "Copy Camera Code" in the plugin. In LaunchCamPlus you can now insert the camera by pressing *CTRL + V*. 
