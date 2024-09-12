@@ -40,7 +40,7 @@ Some parameters can be displayed and edited in the tab when the cone object is s
   - ***No Collision*** Set to 1 to make the camera allow to go through any collision. Set to 0 to disable that
   - ***No Reset*** If this is set to 1 for two cameras, changed Y rotations ingame by the D Pad are adopted between these cameras instead of rotating to the set Y rotation of the camera.
 - **V Pan Settings**
-  - ***V Pan Axix X, Y, Z*** Allows you to set an Axis as Top, which prevents the camera from immediately moving up with Mario (example: when jumping) on this Axis. Set only one of these axes to 1 and the others to 0. If all are set to 0, the game will still use Y as up, except its disabled:
+  - ***V Pan Axix X, Y, Z*** Allows you to set an axis as "height", which prevents the camera from immediately moving up with Mario (example: when jumping) on this axis. Set only one of these axes to 1 and the others to 0. Set to -1 for inverted axis (e.g. when Mario is on the ceiling). If all are set to 0, the game will still use Y as up, except its disabled:
   - ***V Pan Activated*** Set to 1 to activate it. If set to 0, the camera will follow Mario immediately on any axis, even when jumping.
 
 
