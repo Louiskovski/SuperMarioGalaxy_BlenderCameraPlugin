@@ -60,12 +60,13 @@ It consist of a camera object and a Look At object, which transformations can be
 ![screenshot](screenshot4.png)
 
 **Please note the following when animating:**
--CANM contain keyframes handles, which are only the same size, but can be used either as free or as aligned. If you animate in Blender with interpolation mode Bezier, you get a very similar size of the handles, which you should then rotate, edit individually with free handles, but not scale.
--It is recommended that animated axes/info contain a first and a last keyframe from the first to the last frame of the animation, otherwise a zero value is used for the remaining free time (can vary from game to game):
+
+- CANM contain keyframes handles, which are only the same size, but can be used either as free or as aligned. If you animate in Blender with interpolation mode Bezier, you get a very similar size of the handles, which you should then rotate, edit individually with free handles, but not scale.
+- It is recommended that animated axes/info contain a first and a last keyframe from the first to the last frame of the animation, otherwise a zero value is used for the remaining free time (can vary from game to game):
 
 ![screenshot](screenshot5.png)
 
--If an axe/info is not animated, its current setting or transformation is used.
+- If an axe/info is not animated, its current setting or transformation will be exported.
 
 
 ### Export
