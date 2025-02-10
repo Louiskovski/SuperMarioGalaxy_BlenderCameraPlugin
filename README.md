@@ -56,6 +56,7 @@ When you are happy with the camera select the **cone object** and no other objec
 
 Click on Create **CANM Keyframe Camera** to create the required objects for the animated camera.
 It consist of a camera object and a Look At object, which transformations can be animated, except those, that are locked.
+FoV can also be animated. For this you need to set the *Lens Unit* of your camera to Millimeters. Roll is defined by the rotation of the Look At object.
 
 ![screenshot](screenshot4.png)
 
